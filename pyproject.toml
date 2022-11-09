@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "httpie-ipl-sign"
+version = "1.0.0"
+description = ""
+authors = ["Valentin Nagornyy <valentin.nagornyy@inplat.ru>"]
+readme = "README.md"
+packages = [{include = "httpie_ipl_sign"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.28.1"
+httpie = "^3.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins]
+
+[tool.poetry.plugins."httpie.plugins.auth.v1"]
+"ipl_sign" = "httpie_ipl_sign.ipl_sign:IplSignPlugin"
